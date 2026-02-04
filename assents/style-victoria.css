@@ -14,6 +14,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* Hero com overlay sutil e texto que respira */
@@ -24,6 +29,15 @@ html {
 .hero-image-wrap {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(0, 0, 0, 0.03);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-wrap video {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Manifesto com linha decorativa */
@@ -327,11 +341,15 @@ body.mobile-menu-open {
 .carousel-section {
   min-height: 0;
 }
+
 .carousel-wrap {
   position: relative;
   aspect-ratio: 4/3;
   max-height: 70vh;
   background: #e7e5e4;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .carousel-track {
   display: flex;
