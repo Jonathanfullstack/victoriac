@@ -21,6 +21,32 @@ body {
   overflow-x: hidden;
 }
 
+/* Evitar texto fora do card no mobile: títulos podem quebrar linha */
+@media (max-width: 640px) {
+  .hero-title-line {
+    white-space: normal !important;
+  }
+}
+
+/* Cards hero e manifesto: conteúdo dentro do bloco, simétrico */
+.hero-card,
+.manifesto-card {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.hero-card p,
+.hero-card a,
+.manifesto-card p,
+.manifesto-card a {
+  max-width: 100%;
+}
+
+.hero-card .hero-image-wrap,
+.manifesto-card .manifesto-line {
+  max-width: 100%;
+}
+
 /* Hero com overlay sutil e texto que respira */
 .hero-bg {
   background: linear-gradient(180deg, var(--warm-white) 0%, #fff 100%);
