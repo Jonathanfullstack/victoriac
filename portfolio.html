@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio — Victoria Fotografia</title>
+    <meta
+      name="description"
+      content="Portfólio de fotografia documental: Candomblé, Umbanda, Quimbanda, retratos e rituais."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assents/style-victoria.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["Cormorant Garamond", "Georgia", "serif"],
+              sans: ["Outfit", "system-ui", "sans-serif"],
+            },
+            colors: {
+              ink: "#1c1917",
+              gold: { soft: "#ca8a04" },
+              leaf: "#14532d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-[#fafaf9] text-stone-800 font-sans antialiased">
+    <!-- HEADER -->
+    <header
+      class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/80"
+    >
+      <div
+        class="relative max-w-6xl mx-auto px-4 md:px-6 py-2 flex items-center justify-between"
+      >
+        <a href="index.html" class="block flex-shrink-0">
+          <img
+            src="assents/img/logo-victoria-removebg-preview.png"
+            alt="Victoria"
+            class="h-24 md:h-32 w-auto object-contain"
+          />
+        </a>
+        <span
+          class="absolute left-1/2 -translate-x-1/2 font-sans text-stone-800 font-medium tracking-[0.2em] text-sm uppercase whitespace-nowrap"
+        >
+          VictoriacFilms
+        </span>
+        <nav
+          class="hidden md:flex items-center gap-10 text-sm font-medium text-stone-600 font-sans nav-link"
+        >
+          <a href="index.html" class="link-underline hover:text-[#00B3E3]"
+            >Início</a
+          >
+          <a href="portfolio.html" class="text-[#00B3E3] link-underline"
+            >Portfólio</a
+          >
+          <a href="sobre.html" class="link-underline hover:text-[#00B3E3]"
+            >Sobre</a
+          >
+          <a href="contato.html" class="link-underline hover:text-[#00B3E3]"
+            >Contato</a
+          >
+        </nav>
+        <button
+          id="menu-toggle"
+          class="menu-toggle md:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 text-stone-700 rounded-lg hover:bg-stone-100 transition-colors"
+          aria-label="Abrir menu"
+        >
+          <span
+            class="menu-toggle-icon line-1 block w-6 h-0.5 bg-stone-700 rounded-full"
+          ></span>
+          <span
+            class="menu-toggle-icon line-2 block w-6 h-0.5 bg-stone-700 rounded-full"
+          ></span>
+          <span
+            class="menu-toggle-icon line-3 block w-6 h-0.5 bg-stone-700 rounded-full"
+          ></span>
+        </button>
+      </div>
+    </header>
+
+    <div
+      id="mobile-menu"
+      class="mobile-menu-overlay md:hidden"
+      aria-hidden="true"
+    >
+      <button
+        type="button"
+        id="mobile-menu-close"
+        class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-stone-500 hover:text-stone-800 rounded-full hover:bg-stone-100 transition-colors"
+        aria-label="Fechar menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <nav class="mobile-nav-center font-sans nav-link">
+        <a href="index.html">Início</a>
+        <a href="portfolio.html" class="text-[#00B3E3]">Portfólio</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+      <h1
+        class="font-sans text-4xl md:text-5xl text-stone-900 mb-3 font-medium page-fade-in page-delay-1"
+      >
+        Portfólio
+      </h1>
+      <p
+        class="text-stone-500 text-lg mb-12 max-w-xl page-fade-in page-delay-2"
+      >
+        Fotografia documental com respeito ao sagrado e à ancestralidade.
+      </p>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 page-fade-in page-delay-3"
+      >
+        <!-- Card do vídeo (com áudio) -->
+        <article
+          class="portfolio-video-card card-lift rounded-xl page-fade-in page-delay-5"
+        >
+          <div
+            class="portfolio-image-wrap aspect-video md:aspect-[4/5] bg-stone-200 rounded-xl overflow-hidden flex items-center justify-center"
+          >
+            <video
+              class="w-full h-full object-contain md:object-cover"
+              src="assents/img/video-terreiro.mp4"
+              controls
+              playsinline
+              preload="metadata"
+            >
+              Seu navegador não suporta vídeo.
+            </video>
+          </div>
+        </article>
+        <div id="portfolio-grid" class="contents">
+          <!-- Fotos preenchidas via JS -->
+        </div>
+      </div>
+    </main>
+
+    <div id="photo-modal" class="fixed inset-0 z-[100] hidden bg-[#fafaf9]">
+      <div class="h-full flex flex-col max-w-5xl mx-auto px-4 py-6">
+        <button
+          type="button"
+          id="modal-close"
+          class="self-end p-2 text-stone-500 hover:text-stone-900 rounded-lg hover:bg-stone-100 transition-colors"
+          aria-label="Fechar"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <div class="flex-1 flex flex-col md:flex-row gap-10 overflow-auto">
+          <div
+            class="flex-1 min-h-[50vh] bg-stone-100 rounded-xl flex items-center justify-center overflow-hidden"
+          >
+            <img
+              id="modal-image"
+              src=""
+              alt=""
+              class="max-w-full max-h-[70vh] w-full object-contain"
+            />
+          </div>
+          <div class="md:w-80 flex-shrink-0">
+            <h2
+              id="modal-title"
+              class="font-sans text-2xl md:text-3xl text-stone-900 mb-2 font-medium"
+            ></h2>
+            <p id="modal-category" class="tag-category text-sm mb-4"></p>
+            <p
+              id="modal-description"
+              class="text-stone-500 text-sm leading-relaxed"
+            ></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-victoria py-10 px-6 mt-24">
+      <div
+        class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm"
+      >
+        <a href="index.html" class="brand block">
+          <img
+            src="assents/img/logo-victoria-removebg-preview.png"
+            alt="Victoria"
+            class="h-16 md:h-20 w-auto object-contain opacity-95 hover:opacity-100 transition-opacity"
+          />
+        </a>
+        <nav class="flex gap-8 font-sans nav-link">
+          <a href="index.html" class="hover:text-white transition-colors"
+            >Início</a
+          >
+          <a href="portfolio.html" class="hover:text-white transition-colors"
+            >Portfólio</a
+          >
+          <a href="sobre.html" class="hover:text-white transition-colors"
+            >Sobre</a
+          >
+          <a href="contato.html" class="hover:text-white transition-colors"
+            >Contato</a
+          >
+        </nav>
+      </div>
+    </footer>
+
+    <script src="js/portfolio-data.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/nav.js"></script>
+  </body>
+</html>

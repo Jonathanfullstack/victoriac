@@ -1,0 +1,408 @@
+/* Victoria — visual mais vivo e acolhedor */
+:root {
+  --warm-white: #fafaf9;
+  --cream: #f5f5f4;
+  --brand: #00b3e3;
+  --ink-soft: #44403c;
+  --muted: #78716c;
+  --gold: #a16207;
+  --gold-soft: #ca8a04;
+  --earth: #78350f;
+  --leaf: #14532d;
+  --leaf-soft: #166534;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero com overlay sutil e texto que respira */
+.hero-bg {
+  background: linear-gradient(180deg, var(--warm-white) 0%, #fff 100%);
+}
+
+.hero-image-wrap {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+/* Manifesto com linha decorativa */
+.manifesto-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-soft), var(--earth));
+  border-radius: 2px;
+}
+
+/* Botão principal com vida */
+.btn-primary-victoria {
+  background: var(--brand);
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-primary-victoria:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 179, 227, 0.35);
+}
+
+.btn-outline-victoria {
+  border: 2px solid var(--brand);
+  color: var(--brand);
+  transition: all 0.25s ease;
+}
+.btn-outline-victoria:hover {
+  background: var(--brand);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Botão WhatsApp na seção manifesto */
+.btn-whatsapp-manifesto {
+  background: #25d366;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn-whatsapp-manifesto:hover {
+  background: #20bd5a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4);
+}
+
+/* Cards e hovers suaves */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
+}
+
+/* Filtros do portfólio */
+.filter-btn {
+  transition: all 0.25s ease;
+}
+.filter-btn.active {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+/* Link com sublinhado animado */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: var(--brand);
+  transition: width 0.25s ease;
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Seção com fundo quente alternado */
+.section-warm {
+  background: var(--cream);
+}
+
+/* Categoria no modal/card */
+.tag-category {
+  color: var(--leaf);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Contato — botões com personalidade e animações */
+.contact-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease, background 0.3s ease;
+  border: 2px solid #e7e5e4;
+  position: relative;
+  overflow: hidden;
+}
+.contact-btn .contact-btn-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.contact-btn:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: var(--warm-white);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 24px -8px rgba(0, 179, 227, 0.25);
+}
+.contact-btn:hover .contact-btn-icon {
+  transform: scale(1.15);
+  color: var(--brand);
+}
+.contact-btn:active {
+  transform: translateY(-2px) scale(1);
+}
+
+/* Animação de entrada para contato (stagger) */
+.contact-fade-in {
+  opacity: 0;
+  animation: contactFadeUp 0.7s ease forwards;
+}
+.contact-fade-in.delay-1 {
+  animation-delay: 0.1s;
+}
+.contact-fade-in.delay-2 {
+  animation-delay: 0.25s;
+}
+.contact-fade-in.delay-3 {
+  animation-delay: 0.4s;
+}
+.contact-fade-in.delay-4 {
+  animation-delay: 0.55s;
+}
+.contact-fade-in.delay-5 {
+  animation-delay: 0.7s;
+}
+.contact-fade-in.delay-6 {
+  animation-delay: 0.85s;
+}
+@keyframes contactFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer mais vivo */
+.footer-victoria {
+  background: var(--brand);
+  color: rgba(255, 255, 255, 0.9);
+}
+.footer-victoria a:hover {
+  color: #fff;
+}
+.footer-victoria .brand {
+  color: #fff;
+}
+
+/* Menu: mesma fonte em todo o site */
+.nav-link {
+  font-family: inherit;
+}
+
+/* Menu mobile — overlay no centro com fundo esbranquiçado */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.mobile-menu-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-menu-overlay .mobile-nav-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+.mobile-menu-overlay .mobile-nav-center a {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #44403c;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+.mobile-menu-overlay .mobile-nav-center a:hover,
+.mobile-menu-overlay .mobile-nav-center a.text-[#00B3E3] {
+  color: #00b3e3;
+}
+body.mobile-menu-open {
+  overflow: hidden;
+}
+/* Botão hambúrguer que vira X */
+.menu-toggle-icon {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+.menu-toggle.is-active .menu-toggle-icon.line-1 {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.is-active .menu-toggle-icon.line-2 {
+  opacity: 0;
+}
+.menu-toggle.is-active .menu-toggle-icon.line-3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Animação suave de entrada */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Animações de página — harmonizadas em todas as abas */
+@keyframes pageFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.page-fade-in {
+  opacity: 0;
+  animation: pageFadeUp 0.6s ease forwards;
+}
+.page-delay-1 {
+  animation-delay: 0.1s;
+}
+.page-delay-2 {
+  animation-delay: 0.2s;
+}
+.page-delay-3 {
+  animation-delay: 0.3s;
+}
+.page-delay-4 {
+  animation-delay: 0.45s;
+}
+.page-delay-5 {
+  animation-delay: 0.6s;
+}
+.page-delay-6 {
+  animation-delay: 0.75s;
+}
+.page-delay-7 {
+  animation-delay: 0.9s;
+}
+.page-delay-8 {
+  animation-delay: 1.05s;
+}
+.page-delay-9 {
+  animation-delay: 1.2s;
+}
+.page-delay-10 {
+  animation-delay: 1.35s;
+}
+
+/* Imagem do portfólio com brilho sutil no hover */
+.portfolio-image-wrap {
+  overflow: hidden;
+  border-radius: 4px;
+}
+.portfolio-image-wrap img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-image-wrap:hover img {
+  transform: scale(1.04);
+}
+
+/* Carrossel no início da home */
+.carousel-section {
+  min-height: 0;
+}
+.carousel-wrap {
+  position: relative;
+  aspect-ratio: 4/3;
+  max-height: 70vh;
+  background: #e7e5e4;
+}
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.carousel-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #44403c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.carousel-btn:hover {
+  background: #fff;
+  color: var(--brand);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.carousel-prev {
+  left: 12px;
+}
+.carousel-next {
+  right: 12px;
+}
+.carousel-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 10;
+}
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.carousel-dots button:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+.carousel-dots button.is-active {
+  background: #fff;
+  transform: scale(1.2);
+}
