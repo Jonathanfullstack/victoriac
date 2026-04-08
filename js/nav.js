@@ -8,6 +8,7 @@
     if (!menu || !toggle) return;
     menu.classList.add("is-open");
     menu.setAttribute("aria-hidden", "false");
+    toggle.setAttribute("aria-expanded", "true");
     if (toggle) toggle.classList.add("is-active");
     if (body) body.classList.add("mobile-menu-open");
   }
@@ -16,6 +17,7 @@
     if (!menu || !toggle) return;
     menu.classList.remove("is-open");
     menu.setAttribute("aria-hidden", "true");
+    toggle.setAttribute("aria-expanded", "false");
     if (toggle) toggle.classList.remove("is-active");
     if (body) body.classList.remove("mobile-menu-open");
   }

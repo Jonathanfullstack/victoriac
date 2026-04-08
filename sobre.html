@@ -30,9 +30,10 @@
       };
     </script>
   </head>
-  <body class="bg-[#fafaf9] text-stone-800 font-sans antialiased">
+  <body class="victoria-page text-stone-800 font-sans antialiased leading-relaxed">
+    <a href="#main" class="skip-link">Ir para o conteúdo principal</a>
     <header
-      class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/80"
+      class="header-victoria sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/80"
     >
       <div
         class="relative max-w-6xl mx-auto px-4 md:px-6 py-2 flex items-center justify-between"
@@ -65,8 +66,11 @@
         </nav>
         <button
           id="menu-toggle"
-          class="menu-toggle md:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 text-stone-700 rounded-lg hover:bg-stone-100 transition-colors"
+          type="button"
+          class="menu-toggle md:hidden inline-flex flex-col justify-center items-center gap-1.5 min-w-[44px] min-h-[44px] w-11 h-11 text-stone-700 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer"
           aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
         >
           <span
             class="menu-toggle-icon line-1 block w-6 h-0.5 bg-stone-700 rounded-full"
@@ -114,16 +118,19 @@
       </nav>
     </div>
 
-    <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-20 md:py-28">
-      <h1
-        class="font-sans text-4xl md:text-5xl text-stone-900 mb-14 font-medium page-fade-in page-delay-1"
-      >
-        Sobre
-      </h1>
+    <main id="main" class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-20 md:py-28">
+      <header class="page-intro mb-12 md:mb-16">
+        <p class="hero-eyebrow mb-3 page-fade-in page-delay-1">Quem faz</p>
+        <h1
+          class="section-heading-serif text-4xl md:text-5xl text-stone-900 page-fade-in page-delay-1"
+        >
+          Sobre
+        </h1>
+      </header>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-start">
         <div
-          class="card-lift rounded-2xl overflow-hidden aspect-[3/4] max-h-[85vh] bg-stone-200 shadow-lg page-fade-in page-delay-2"
+          class="surface-card design-lift rounded-3xl overflow-hidden aspect-[3/4] max-h-[85vh] bg-stone-200 page-fade-in page-delay-2"
         >
           <img
             src="assents/img/foto-da-victoria.jpeg"
@@ -132,9 +139,9 @@
             onerror="this.style.display='none'; this.parentElement.classList.add('flex','items-center','justify-center'); this.parentElement.innerHTML='<span class=\'text-stone-500 text-sm\'>Foto da fotógrafa</span>';"
           />
         </div>
-        <div class="space-y-6">
+        <div class="space-y-6 md:pt-2">
           <p
-            class="font-sans text-2xl md:text-3xl text-stone-800 leading-snug font-medium page-fade-in page-delay-3"
+            class="font-serif text-2xl md:text-3xl text-stone-800 leading-snug font-medium page-fade-in page-delay-3"
           >
             Meu nome é Victoria Cristina, tenho 26 anos, sou fotógrafa e filmmaker há 7 anos.
           </p>

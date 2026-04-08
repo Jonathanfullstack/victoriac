@@ -36,10 +36,11 @@
       };
     </script>
   </head>
-  <body class="bg-[#fafaf9] text-stone-800 font-sans antialiased">
+  <body class="victoria-page text-stone-800 font-sans antialiased leading-relaxed">
+    <a href="#main" class="skip-link">Ir para o conteúdo principal</a>
     <!-- HEADER -->
     <header
-      class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/80"
+      class="header-victoria fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/80"
     >
       <div
         class="relative max-w-6xl mx-auto px-4 md:px-6 py-2 flex items-center justify-between"
@@ -78,8 +79,11 @@
         </nav>
         <button
           id="menu-toggle"
-          class="menu-toggle md:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 text-stone-700 rounded-lg hover:bg-stone-100 transition-colors"
+          type="button"
+          class="menu-toggle md:hidden inline-flex flex-col justify-center items-center gap-1.5 min-w-[44px] min-h-[44px] w-11 h-11 text-stone-700 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer"
           aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
         >
           <span
             class="menu-toggle-icon line-1 block w-6 h-0.5 bg-stone-700 rounded-full"
@@ -128,14 +132,20 @@
       </nav>
     </div>
 
+    <main id="main">
     <!-- HERO (tudo dentro de um card simétrico) -->
     <section
       class="hero-bg min-h-screen flex flex-col justify-center items-center pt-40 md:pt-48 pb-16"
     >
       <div class="w-full max-w-4xl mx-auto px-4 sm:px-6">
         <div
-          class="hero-card bg-white rounded-2xl shadow-lg overflow-hidden p-4 sm:p-6 md:p-8 text-center"
+          class="hero-card design-lift bg-white rounded-3xl overflow-hidden p-4 sm:p-6 md:p-8 text-center"
         >
+          <p
+            class="hero-eyebrow mb-4 sm:mb-5 page-fade-in page-delay-1"
+          >
+            Fotografia documental
+          </p>
           <div
             class="hero-image-wrap max-h-[70vh] rounded-xl mb-6 sm:mb-8 page-fade-in page-delay-1"
           >
@@ -151,12 +161,12 @@
             </video>
           </div>
           <p
-            class="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-stone-900 leading-tight mb-4 sm:mb-6 font-medium page-fade-in page-delay-2 px-0 sm:px-2"
+            class="hero-headline-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] text-stone-900 leading-[1.15] mb-4 sm:mb-6 page-fade-in page-delay-2 px-0 sm:px-2"
           >
-            <span class="hero-title-line text-2xl md:text-3xl lg:text-4xl"
+            <span class="hero-title-line block"
               >Fotografia como memória do sagrado</span
-            ><br />
-            <span class="text-[#00B3E3] text-2xl md:text-3xl lg:text-4xl"
+            >
+            <span class="block text-[#00B3E3] mt-1"
               >e da ancestralidade viva.</span
             >
           </p>
@@ -179,7 +189,7 @@
     <section class="section-warm py-28 md:py-36 px-4 sm:px-6">
       <div class="max-w-2xl w-full mx-auto">
         <div
-          class="manifesto-card bg-white rounded-2xl shadow-md overflow-hidden p-6 sm:p-8 md:p-10 text-center"
+          class="manifesto-card design-lift bg-white rounded-3xl overflow-hidden p-6 sm:p-8 md:p-10 text-center"
         >
           <div
             class="manifesto-line mx-auto mb-6 sm:mb-8 page-fade-in page-delay-1"
@@ -226,13 +236,23 @@
 
     <!-- CARROSSEL (card simétrico) -->
     <section
-      class="carousel-section py-16 md:py-20 px-4 sm:px-6 bg-[#fafaf9]"
+      class="carousel-section py-16 md:py-24 px-4 sm:px-6"
       aria-label="Galeria"
     >
       <div class="max-w-4xl w-full mx-auto">
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden p-4 sm:p-6">
+        <header class="text-center mb-8 md:mb-10">
+          <h2 class="section-heading-serif text-3xl md:text-4xl text-stone-900">
+            Galeria
+          </h2>
+          <p class="text-stone-500 text-sm md:text-base mt-2 max-w-md mx-auto">
+            Momentos em imagem — rituais, rostos e presença.
+          </p>
+        </header>
+        <div
+          class="carousel-shell design-lift bg-white rounded-3xl overflow-hidden p-4 sm:p-6 md:p-8"
+        >
           <div
-            class="carousel-wrap relative rounded-xl overflow-hidden shadow-lg"
+            class="carousel-wrap relative rounded-xl overflow-hidden ring-1 ring-stone-200/80"
           >
             <div class="carousel-track">
               <div class="carousel-slide">
@@ -404,6 +424,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer-victoria py-10 px-4 sm:px-6">

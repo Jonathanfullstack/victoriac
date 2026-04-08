@@ -3,6 +3,7 @@
   --warm-white: #fafaf9;
   --cream: #f5f5f4;
   --brand: #00b3e3;
+  --brand-soft: rgba(0, 179, 227, 0.12);
   --ink-soft: #44403c;
   --muted: #78716c;
   --gold: #a16207;
@@ -10,6 +11,81 @@
   --earth: #78350f;
   --leaf: #14532d;
   --leaf-soft: #166534;
+  --card-border: rgba(231, 229, 228, 0.9);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 20px 50px -15px rgba(0, 0, 0, 0.12);
+  --shadow-card-hover: 0 25px 60px -20px rgba(0, 179, 227, 0.15);
+}
+
+/* Página — fundo editorial com luz suave */
+.victoria-page {
+  background-color: var(--warm-white);
+  background-image: radial-gradient(
+      ellipse 90% 55% at 50% -15%,
+      var(--brand-soft),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 100% 20%,
+      rgba(202, 138, 4, 0.06),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 45% 35% at 0% 80%,
+      rgba(120, 53, 15, 0.04),
+      transparent 45%
+    );
+}
+
+.header-victoria {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.04);
+}
+
+/* Cards com borda e sombra unificada */
+.hero-card.design-lift,
+.manifesto-card.design-lift,
+.carousel-shell.design-lift,
+.surface-card.design-lift {
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.hero-card.design-lift:hover,
+.manifesto-card.design-lift:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(0, 179, 227, 0.2);
+}
+
+/* Carrossel / superfícies estáticas: sem hover de sombra */
+.carousel-shell.design-lift,
+.surface-card.design-lift {
+  transition: none;
+}
+
+.hero-eyebrow {
+  letter-spacing: 0.22em;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.hero-headline-serif {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.section-heading-serif {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Bloco de página interna — título + subtítulo */
+.page-intro {
+  max-width: 42rem;
 }
 
 html {
@@ -19,6 +95,66 @@ html {
 
 body {
   overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Acessibilidade e consistência (UI/UX Pro Max–style: foco, skip, motion) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10000;
+  padding: 0.75rem 1.25rem;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+  transition: transform 0.2s ease;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  outline: none;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--brand);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--warm-white), 0 0 0 4px var(--brand);
+}
+
+.footer-victoria a:focus-visible {
+  box-shadow: 0 0 0 2px var(--brand), 0 0 0 4px rgba(255, 255, 255, 0.95);
+}
+
+.mobile-menu-overlay a:focus-visible {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--brand);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .page-fade-in,
+  .contact-fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .card-lift,
+  .btn-primary-victoria,
+  .btn-outline-victoria,
+  .btn-whatsapp-manifesto,
+  .contact-btn,
+  .hero-card.design-lift,
+  .manifesto-card.design-lift {
+    transition-duration: 0.01ms !important;
+  }
+  .card-lift:hover {
+    transform: none;
+  }
 }
 
 /* Evitar texto fora do card no mobile: títulos podem quebrar linha */
@@ -49,7 +185,7 @@ body {
 
 /* Hero com overlay sutil e texto que respira */
 .hero-bg {
-  background: linear-gradient(180deg, var(--warm-white) 0%, #fff 100%);
+  background: transparent;
 }
 
 .hero-image-wrap {
@@ -76,6 +212,7 @@ body {
 
 /* Botão principal com vida */
 .btn-primary-victoria {
+  cursor: pointer;
   background: var(--brand);
   color: #fff;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -86,6 +223,7 @@ body {
 }
 
 .btn-outline-victoria {
+  cursor: pointer;
   border: 2px solid var(--brand);
   color: var(--brand);
   transition: all 0.25s ease;
@@ -98,6 +236,7 @@ body {
 
 /* Botão WhatsApp na seção manifesto */
 .btn-whatsapp-manifesto {
+  cursor: pointer;
   background: #25d366;
   color: #fff;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
@@ -159,6 +298,7 @@ body {
 
 /* Contato — botões com personalidade e animações */
 .contact-btn {
+  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease,
     color 0.3s ease, background 0.3s ease;
   border: 2px solid #e7e5e4;

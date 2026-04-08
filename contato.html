@@ -30,9 +30,10 @@
       };
     </script>
   </head>
-  <body class="bg-[#fafaf9] text-stone-800 font-sans antialiased">
+  <body class="victoria-page text-stone-800 font-sans antialiased leading-relaxed">
+    <a href="#main" class="skip-link">Ir para o conteúdo principal</a>
     <header
-      class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/80"
+      class="header-victoria sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/80"
     >
       <div
         class="relative max-w-6xl mx-auto px-4 md:px-6 py-2 flex items-center justify-between"
@@ -67,8 +68,11 @@
         </nav>
         <button
           id="menu-toggle"
-          class="menu-toggle md:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 text-stone-700 rounded-lg hover:bg-stone-100 transition-colors"
+          type="button"
+          class="menu-toggle md:hidden inline-flex flex-col justify-center items-center gap-1.5 min-w-[44px] min-h-[44px] w-11 h-11 text-stone-700 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer"
           aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
         >
           <span
             class="menu-toggle-icon line-1 block w-6 h-0.5 bg-stone-700 rounded-full"
@@ -117,7 +121,8 @@
     </div>
 
     <main
-      class="min-h-[70vh] flex flex-col justify-center max-w-2xl w-full mx-auto px-4 sm:px-6 py-24 md:py-32 text-center relative overflow-hidden"
+      id="main"
+      class="min-h-[70vh] flex flex-col justify-center max-w-3xl w-full mx-auto px-4 sm:px-6 py-24 md:py-32 relative overflow-hidden"
     >
       <!-- Decoração sutil de fundo -->
       <div
@@ -132,22 +137,28 @@
         ></div>
       </div>
 
-      <h1
-        class="font-sans text-4xl md:text-5xl text-stone-900 mb-4 font-medium page-fade-in page-delay-1 relative"
+      <div
+        class="surface-card design-lift relative z-10 rounded-3xl bg-white/95 backdrop-blur-sm px-6 py-10 md:px-10 md:py-12 text-center mx-auto w-full max-w-2xl"
       >
-        Contato
-      </h1>
-      <p class="text-stone-500 text-xl mb-4 page-fade-in page-delay-2 relative">
+      <header class="page-intro mx-auto mb-10 text-center">
+        <p class="hero-eyebrow mb-3 page-fade-in page-delay-1">Fale comigo</p>
+        <h1
+          class="section-heading-serif text-4xl md:text-5xl text-stone-900 mb-4 page-fade-in page-delay-1"
+        >
+          Contato
+        </h1>
+        <p class="text-stone-500 text-lg md:text-xl mb-3 leading-relaxed page-fade-in page-delay-2">
         Para projetos, registros e colaborações culturais.
       </p>
       <p
-        class="text-stone-400 text-sm mb-14 page-fade-in page-delay-3 relative"
+        class="text-stone-400 text-sm mb-0 page-fade-in page-delay-3"
       >
         Escolha uma das formas abaixo e vamos conversar.
       </p>
+      </header>
 
       <div
-        class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch sm:items-center flex-wrap relative max-w-3xl mx-auto"
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch sm:items-center flex-wrap max-w-3xl mx-auto"
       >
         <a
           href="https://www.instagram.com/victoriacfilms/"
@@ -195,9 +206,10 @@
         </a>
       </div>
 
-      <p class="text-stone-400 text-sm mt-10 page-fade-in page-delay-6 relative">
+      <p class="text-stone-400 text-sm mt-10 page-fade-in page-delay-6">
         WhatsApp: (11) 94283-6072 &nbsp;·&nbsp; Instagram: @victoriacfilms
       </p>
+      </div>
     </main>
 
     <footer class="footer-victoria py-10 px-4 sm:px-6 mt-24">
